@@ -1,26 +1,19 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
+      <Logo/>
       <h1 class="title">
-        empafy
+        empify
       </h1>
+      <input v-model="search">
+      <p>{{ search }}</p>
       <div class="links">
         <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           rel="noopener noreferrer"
           class="button--grey"
         >
-          GitHub
+          Search
         </a>
       </div>
     </div>
@@ -28,7 +21,43 @@
 </template>
 
 <script>
-export default {}
+
+import spotify from '@/modules/spotify/search'
+
+export default {
+  middleware: ['auth', 'user'],
+  data () {
+    return {
+      value: ''
+    }
+  },
+  computed: {
+    search: {
+      get () {
+        return this.value
+      },
+      set (val) {
+        this.value = val
+        this._search()
+      }
+    }
+  },
+  methods: {
+    async _search () {
+      try {
+        const response = await spotify.search(this.$api, this.search)
+        if (response.data) {
+          this.$store.dispatch('spotify/albums/SET_ALBUMS_INFO', response.data.albums, { root: true })
+          this.$store.dispatch('spotify/artists/SET_ARTISTS_INFO', response.data.artists, { root: true })
+          console.log(response.data.playlists)
+          console.log(response.data.tracks)
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    }
+  }
+}
 </script>
 
 <style>
@@ -42,16 +71,15 @@ export default {}
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: 'Quicksand',
+  'Source Sans Pro',
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

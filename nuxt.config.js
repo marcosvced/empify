@@ -1,4 +1,3 @@
-
 export default {
   /*
   ** Nuxt rendering mode
@@ -35,6 +34,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: '~/plugins/localStorage.js', ssr: false },
+    { src: '~/plugins/api.js' }
   ],
   /*
   ** Auto import components
@@ -59,11 +60,20 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+  },
+  serverMiddleware: [
+    { path: '/', handler: '~/api/server.js' }
+  ],
+  publicRuntimeConfig: {
+    API_URL: process.env.API_URL,
+    SPOTIFY_URL: process.env.SPOTIFY_URL,
+    SPOTIFY_STORAGE_KEY: process.env.SPOTIFY_STORAGE_KEY
   }
 }

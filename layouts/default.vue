@@ -1,5 +1,8 @@
 <template>
   <div>
+    <p @click="logout">
+      logout
+    </p>
     <Nuxt />
   </div>
 </template>
@@ -60,3 +63,10 @@ html {
   background-color: #35495e;
 }
 </style>
+<script>
+export default {
+  methods: {
+    logout () { this.$store.dispatch('auth/LOGOUT') }
+  }
+}
+</script>
