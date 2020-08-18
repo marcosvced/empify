@@ -4,6 +4,6 @@ export default {
   },
 
   refreshToken ($api, refreshToken) {
-    return $api.server.get(`refresh_token?refresh_token=${refreshToken}`)
+    return $api.server().get(`refresh_token?refresh_token=${refreshToken}`)
   }
 }
