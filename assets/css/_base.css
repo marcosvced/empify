@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  width: 100%;
+  background-color: var(--c-dark);
+  font-family: var(--f-paragraph);
+  font-size: var(--f-size-regular);
+  color: var(--c-light);
+}
+
+h1 {
+  font-family: var(--f-title);
+  font-size: var(--f-size-large);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-secondary);
+}

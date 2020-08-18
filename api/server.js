@@ -108,5 +108,5 @@ app.get('api/refreshToken', (req, res) => {
   })
 })
 
-app.listen(4200, () => console.info('Server running: ', app.host))
+app.listen(4200)
 export default app

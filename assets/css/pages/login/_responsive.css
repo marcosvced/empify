@@ -1,0 +1,36 @@
+/*--xsm: 375px;
+--sm: 480px;
+--md: 640px;
+--ip: 1023px;
+--lg: 1366px;
+--xl: 1920px;*/
+@media screen and (min-width: 1024px) {
+  .o-login {
+    --btn-height: 20%;
+    --btn-width: calc(var(--content-width) * .65);
+  }
+  .o-login .m-login__content .m-login__start {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .o-login {
+    --picture-width: 45%;
+    --btn-width: calc(var(--content-width) * .5);
+  }
+
+  /* Picture section */
+  .o-login .m-login__picture {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .o-login {
+    --picture-width: 57%;
+    --btn-width: calc(var(--content-width) * .45);
+  }
+}
+

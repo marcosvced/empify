@@ -1,0 +1,7 @@
+@import "./variables/_palette.css";
+@import "./variables/_sizes.css";
+@import "./variables/_fonts.css";
+
+@import "./_fonts.css";
+
+@import "./_base.css";

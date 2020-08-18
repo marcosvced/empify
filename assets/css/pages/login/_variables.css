@@ -1,0 +1,6 @@
+.o-login {
+  --btn-height: 10%;
+  --btn-width: 90vw;
+  --picture-width: 0%;
+  --content-width: calc(100% - var(--picture-width));
+}

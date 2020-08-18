@@ -1,8 +1,8 @@
 <template>
   <div>
-    <p @click="logout">
-      logout
-    </p>
+<!--    <p @click="logout">-->
+<!--      logout-->
+<!--    </p>-->
     <Nuxt />
   </div>
 </template>
