@@ -82,7 +82,7 @@ app.get('/api/callback', (req, res) => {
   }
 })
 
-app.get('api/refreshToken', (req, res) => {
+app.get('/api/refreshToken', (req, res) => {
   const refresh_token = req.query.refresh_token
 
   const authOptions = {
