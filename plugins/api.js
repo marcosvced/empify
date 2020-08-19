@@ -14,10 +14,15 @@ const apiFactory = (axios, store, config) => ({
       }
       try {
         await store.dispatch('auth/REFRESH_TOKEN', null, { root: true })
+      } catch (e) {
+        console.error('Error refreshing token: ', e)
+      }
+      try {
         error.config.headers.Authorization = `Bearer ${store.getters['auth/GET_ACCESS_TOKEN']}`
         await axios.request(error.config)
       } catch (e) {
-        console.error('Error refreshing token: ', e)
+        // TODO: add error handling
+        console.error('Request repeated error: ', e)
       }
     })
 
@@ -30,6 +35,5 @@ const apiFactory = (axios, store, config) => ({
   }
 })
 export default ({ app, store }, inject) => {
-  console.log(app)
   inject('api', apiFactory(app.$axios, store, app.$config))
 }

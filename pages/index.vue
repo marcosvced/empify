@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <Logo/>
+      <Logo />
       <h1 class="title">
         empify
       </h1>
@@ -47,8 +47,8 @@ export default {
       try {
         const response = await spotify.search(this.$api, this.search)
         if (response.data) {
-          this.$store.dispatch('spotify/albums/SET_ALBUMS_INFO', response.data.albums, { root: true })
-          this.$store.dispatch('spotify/artists/SET_ARTISTS_INFO', response.data.artists, { root: true })
+          this.$store.dispatch('spotify/albums/SET_ALBUMS_INFO', response.data.albums)
+          this.$store.dispatch('spotify/artists/SET_ARTISTS_INFO', response.data.artists)
           console.log(response.data.playlists)
           console.log(response.data.tracks)
         }

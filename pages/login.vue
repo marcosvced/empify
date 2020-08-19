@@ -75,15 +75,17 @@ export default {
       this.$store.dispatch('auth/LOGIN')
     },
     _getLocalStorage () {
-      const auth = window.localStorage[this.$config.SPOTIFY_STORAGE_KEY] ? JSON.parse(window.localStorage[this.$config.SPOTIFY_STORAGE_KEY]).auth : null
-      if (auth) {
-        this._setAuthentication(auth.accessToken, auth.refreshToken, auth.expiryIn)
+      if (this.$store.getters['auth/GET_ACCESS_TOKEN']) {
+        this._redirect()
       }
     },
     _setAuthentication (accessToken, refreshToken, expiresIn) {
       this.$store.dispatch('auth/SET_ACCESS_TOKEN', accessToken)
       this.$store.dispatch('auth/SET_REFRESH_TOKEN', refreshToken)
       this.$store.dispatch('auth/SET_EXPIRY_TIME', expiresIn)
+      this._redirect()
+    },
+    _redirect () {
       this.$router.push({ name: 'index' })
     }
   }
