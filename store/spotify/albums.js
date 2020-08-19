@@ -9,7 +9,9 @@ export const state = () => ({
 
 })
 
-export const getters = {}
+export const getters = {
+  GET_ALBUMS: state => state.items
+}
 
 export const mutations = {
   SET_ITEMS (state, items) {
@@ -38,5 +40,12 @@ export const actions = {
     context.commit('SET_NEXT', info.next)
     context.commit('SET_PREVIOUS', info.previous)
     context.commit('SET_TOTAL', info.total)
+  },
+  CLEAR_ALBUMS (context) {
+    context.commit('SET_HREF', '')
+    context.commit('SET_NEXT', '')
+    context.commit('SET_PREVIOUS', '')
+    context.commit('SET_TOTAL', '')
+    context.commit('SET_ITEMS', [])
   }
 }
