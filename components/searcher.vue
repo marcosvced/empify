@@ -33,57 +33,65 @@
       >
     </label>
     <div class="m-searcher__content">
-      <div v-if="tracks.length" class="m-content__tracks -wrapper">
-        <h2 class="a-tracks__title -header">
-          Tracks
-        </h2>
-        <ul class="m-content__items -list">
-          <li v-for="item in tracks.slice(0,8)" :key="item.id" class="a-items__track">
-            {{ item.name }}
-          </li>
-          <li v-if="tracks.length > 8" class="a-items__more">
-            + See more
-          </li>
-        </ul>
-      </div>
-      <div v-if="albums.length" class="m-content__albums -wrapper">
-        <h2 class="a-albums__title -header">
-          Albums
-        </h2>
-        <ul class="m-content__items -list">
-          <li v-for="item in albums.slice(0,5)" :key="item.id" class="a-items__album">
-            {{ item.name }}
-          </li>
-          <li v-if="albums.length > 5" class="a-items__more">
-            + See more
-          </li>
-        </ul>
-      </div>
-      <div v-if="artists.length" class="m-content__artists -wrapper">
-        <h2 class="a-artists__title -header">
-          Artists
-        </h2>
-        <ul class="m-content__items -list">
-          <li v-for="item in artists.slice(0,5)" :key="item.id" class="a-items__artist">
-            {{ item.name }}
-          </li>
-          <li v-if="artists.length > 5" class="a-items__more">
-            + See more
-          </li>
-        </ul>
-      </div>
-      <p v-if="!tracks.length && !albums.length && !artists.length && search" class="m-content__no-items">
-        No items found for this search
-      </p>
+      <transition-fade>
+        <div v-if="tracks.length" class="m-content__tracks -wrapper">
+          <h2 class="a-tracks__title -header">
+            Tracks
+          </h2>
+          <ul class="m-content__items -list">
+            <li v-for="item in tracks.slice(0,8)" :key="item.id" class="a-items__track">
+              {{ item.name }}
+            </li>
+            <li v-if="tracks.length > 8" class="a-items__more">
+              + See more
+            </li>
+          </ul>
+        </div>
+      </transition-fade>
+      <transition-fade>
+        <div v-if="albums.length" class="m-content__albums -wrapper">
+          <h2 class="a-albums__title -header">
+            Albums
+          </h2>
+          <ul class="m-content__items -list">
+            <li v-for="item in albums.slice(0,5)" :key="item.id" class="a-items__album">
+              {{ item.name }}
+            </li>
+            <li v-if="albums.length > 5" class="a-items__more">
+              + See more
+            </li>
+          </ul>
+        </div>
+      </transition-fade>
+      <transition-fade>
+        <div v-if="artists.length" class="m-content__artists -wrapper">
+          <h2 class="a-artists__title -header">
+            Artists
+          </h2>
+          <ul class="m-content__items -list">
+            <li v-for="item in artists.slice(0,5)" :key="item.id" class="a-items__artist">
+              {{ item.name }}
+            </li>
+            <li v-if="artists.length > 5" class="a-items__more">
+              + See more
+            </li>
+          </ul>
+        </div>
+      </transition-fade>
+        <p v-if="!tracks.length && !albums.length && !artists.length && search" class="m-content__no-items">
+          No items found for this search
+        </p>
     </div>
   </div>
 </template>
 
 <script>
 import spotify from '@/modules/spotify/search'
+import TransitionFade from '@/components/shared/transition-fade'
 
 export default {
   name: 'Searcher',
+  components: { TransitionFade },
   data () {
     return {
       value: ''
@@ -157,4 +165,5 @@ export default {
 @import "assets/css/components/searcher/_variables.css";
 @import "assets/css/components/searcher/_styles.css";
 @import "assets/css/components/searcher/_responsive.css";
+
 </style>
