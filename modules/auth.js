@@ -4,6 +4,7 @@ export default {
   },
 
   refreshToken ($api, refreshToken) {
+    console.log('ENTRA EN REFRESH TOKEN')
     return $api.server().get(`refreshToken?refresh_token=${refreshToken}`)
   }
 }

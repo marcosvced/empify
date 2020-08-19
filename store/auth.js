@@ -40,9 +40,12 @@ export const actions = {
 
   async REFRESH_TOKEN (context) {
     try {
-      if (state.refreshToken) {
-        const response = await auth.refreshToken(this.$api, state.refreshToken)
-        await context.dispatch('SET_ACCESS_TOKEN', response.data.accessToken)
+      console.log(context.state.refreshToken)
+      if (context.state.refreshToken) {
+        const response = await auth.refreshToken(this.$api, context.state.refreshToken)
+        console.log(response.data.access_token)
+        await context.dispatch('SET_ACCESS_TOKEN', response.data.access_token)
+        console.log(context.state.accessToken)
       }
     } catch (e) {
       console.error(e)
