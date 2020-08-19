@@ -30,6 +30,5 @@ const apiFactory = (axios, store, config) => ({
   }
 })
 export default ({ app, store }, inject) => {
-  console.log(app)
   inject('api', apiFactory(app.$axios, store, app.$config))
 }

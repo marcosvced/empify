@@ -38,11 +38,11 @@ export const actions = {
     }
   },
 
-  async REFRESH_TOKEN ({ commit, state }) {
+  async REFRESH_TOKEN (context) {
     try {
       if (state.refreshToken) {
         const response = await auth.refreshToken(this.$api, state.refreshToken)
-        commit('SET_ACCESS_TOKEN', response.data.accessToken)
+        await context.dispatch('SET_ACCESS_TOKEN', response.data.accessToken)
       }
     } catch (e) {
       console.error(e)
