@@ -13,10 +13,8 @@ const apiFactory = (axios, store, config) => ({
         return console.error('!401: ', error)
       }
       try {
-        console.log('INTENTASE REFRESCAR O TOKEN')
         await store.dispatch('auth/REFRESH_TOKEN', null, { root: true })
         error.config.headers.Authorization = `Bearer ${store.getters['auth/GET_ACCESS_TOKEN']}`
-        console.log('RELANZASE A PETICIÖN')
         await axios.request(error.config)
       } catch (e) {
         console.error('Error refreshing token: ', e)

@@ -98,7 +98,7 @@
   text-transform: uppercase;
   font-size: clamp(var(--f-size-regular), 1.5vw, var(--f-size-medium));
   color: var(--c-light);
-  background-image: linear-gradient(to right, var(--c-primary), var(--c-secondary));
+  background-image: linear-gradient(to right, var(--c-main), var(--c-accent));
   height: var(--btn-height);
   width: var(--btn-width);
   position: absolute;
