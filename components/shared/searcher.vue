@@ -1,5 +1,44 @@
 <template>
   <div class="o-searcher">
+    <svg
+      width="56"
+      height="56"
+      viewBox="0 0 56 56"
+      fill="none"
+      class="a-searcher__close"
+      @click="$store.dispatch('searcher/CLOSE')"
+    >
+      <g>
+        <path
+          class="a-close__line -back"
+          d="M41.4921 14.6674L13.9921 42.1675"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          class="a-close__line -back"
+          d="M13.9921 14.6674L41.4921 42.1675"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+      <g>
+        <path
+          class="a-close__line -front -bottom"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          class="a-close__line -front -top"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+    </svg>
     <label class="a-searcher">
       <svg
         ref="icon"

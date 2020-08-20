@@ -10,6 +10,43 @@
   display: flex;
   flex-direction: column;
 }
+/* Icon close */
+.o-searcher .a-searcher__close {
+  position: absolute;
+  cursor: pointer;
+  right: 3vw;
+  top: 3vw;
+}
+
+.o-searcher .a-searcher__close .a-close__line {
+}
+
+.o-searcher .a-searcher__close .a-close__line.-back {
+  stroke: var(--c-medium-light);
+}
+
+.o-searcher .a-searcher__close .a-close__line.-front {
+  stroke: var(--c-light);
+  opacity: 0;
+  transition: all .4s ease-in-out;
+}
+
+.o-searcher .a-searcher__close .a-close__line.-front.-top {
+  d: path('M14 15L15 16');
+  transition-delay: .2s;
+}
+.o-searcher .a-searcher__close .a-close__line.-front.-bottom {
+  d: path('M15 41L14 42');
+}
+
+.o-searcher .a-searcher__close:hover .a-close__line.-front.-bottom {
+  d: path('M41.4921 14.6674L13.9921 42.1675');
+  opacity: 1;
+}
+.o-searcher .a-searcher__close:hover .a-close__line.-front.-top {
+  d: path('M13.9921 14.6674L41.4921 42.1675');
+  opacity: 1;
+}
 
 /* Searcher Input */
 .o-searcher .a-searcher {
