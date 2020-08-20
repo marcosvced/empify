@@ -37,7 +37,7 @@ ul.-list li {
 
 ul.-list li.-active,
 ul.-list li:hover {
-  background-image: linear-gradient(90deg, var(--c-primary), var(--c-accent));
+  background-image: linear-gradient(90deg, var(--c-main), var(--c-accent));
   opacity: 1;
 }
 
@@ -59,9 +59,9 @@ ul.-list li:not(:last-child) {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--c-primary);
+  background: var(--c-main);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--c-secondary);
+  background: var(--c-accent);
 }

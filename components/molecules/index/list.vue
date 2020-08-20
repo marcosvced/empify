@@ -64,7 +64,7 @@ export default {
   content: "";
   height: 5px;
   width: 0;
-  background-color: var(--c-secondary);
+  background-color: var(--c-accent);
   position: absolute;
   top: 50%;
   left: 0;
