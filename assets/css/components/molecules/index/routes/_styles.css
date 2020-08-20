@@ -1,0 +1,50 @@
+.o-index .m-index__routes {
+  font-size: clamp(var(--f-size-regular), 2.5vw, var(--f-size-medium));
+  font-family: var(--f-title);
+  width: fit-content;
+  height: fit-content;
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  padding: 1em 0 0;
+  margin-bottom: -1em;
+  transform: rotate(-90deg);
+  transform-origin: left top;
+}
+
+.o-index .m-index__routes a {
+  text-decoration: none;
+  color: var(--c-light);
+  text-transform: uppercase;
+  opacity: .25;
+  position: relative;
+  padding-left: .5em;
+  padding-right: .5em;
+  transition: opacity .4s ease-in-out, transform .4s ease-in-out;
+  display: block;
+}
+
+.o-index .m-index__routes a:hover {
+  opacity: 1;
+}
+
+.o-index .m-index__routes a:before {
+  content: "";
+  width: 0;
+  height: 5px;
+  background-color: var(--c-light);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: width .6s var(--ease-in-out-circ), opacity .4s ease-in-out;
+}
+
+.o-index .m-index__routes a.-active {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.o-index .m-index__routes a.-active:before {
+  width: 100%;
+}

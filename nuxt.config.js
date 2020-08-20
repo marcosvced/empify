@@ -38,6 +38,7 @@ export default {
   */
   plugins: [
     { src: '~/plugins/localStorage.js', ssr: false },
+    { src: '~/plugins/fragment.js' , ssr: false },
     { src: '~/plugins/api.js' }
   ],
   /*

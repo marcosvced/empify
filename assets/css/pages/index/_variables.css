@@ -1,0 +1,11 @@
+.o-index {
+  --gap: 6%;
+  --first-row: 10vh;
+  --first-column: 6rem;
+
+  --social: social;
+  --routes: routes;
+  --list: list;
+  --header: header;
+  --content: content;
+}

@@ -5,12 +5,17 @@ export const state = () => ({
   href: '',
   next: '',
   previous: '',
-  total: 0
-
+  total: 0,
+  selected: null
 })
 
 export const getters = {
-  GET_ALBUMS: state => state.items
+  GET_ALBUMS: state => state.items,
+  GET_SELECTED: (state) => {
+    return state.items.find((album) => {
+      return album.id === state.selected
+    })
+  }
 }
 
 export const mutations = {
@@ -28,6 +33,9 @@ export const mutations = {
   },
   SET_TOTAL (state, total) {
     state.total = total
+  },
+  SET_SELECTED (state, id) {
+    state.selected = id
   }
 }
 
@@ -47,5 +55,9 @@ export const actions = {
     context.commit('SET_PREVIOUS', '')
     context.commit('SET_TOTAL', '')
     context.commit('SET_ITEMS', [])
+    context.dispatch('CLEAR_SELECTED')
+  },
+  CLEAR_SELECTED (context) {
+    context.commit('SET_SELECTED', null)
   }
 }

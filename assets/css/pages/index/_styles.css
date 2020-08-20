@@ -1,0 +1,28 @@
+.o-index {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 6rem 25% auto;
+  grid-template-rows: var(--first-row) calc(calc(100vh - var(--first-row)) - var(--gap));
+  grid-template-areas:
+    "social list header"
+    "routes list content";
+  gap: 6%;
+}
+.o-index .m-index__routes {
+  grid-area: var(--routes);
+  align-self: end;
+}
+
+.o-index .m-index__header {
+  grid-area: var(--header);
+  display: flex;
+  justify-content: space-between;
+}
+
+.o-index >>> [class*='__list']{
+  grid-area: var(--list);
+}
+.o-index >>> [class$='__info-wrapper']{
+  grid-area: var(--content);
+}
