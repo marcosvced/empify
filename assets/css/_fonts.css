@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'GT America';
+  font-weight: normal;
+  src: url(../fonts/GTAmerica/gta-regular.woff2);
+}
+
+@font-face {
+  font-family: 'GT America';
+  font-weight: bold;
+  src: url(../fonts/GTAmerica/gta-medium.woff2);
+}
+
+@font-face {
+  font-family: 'GT America';
+  font-weight: normal;
+  font-style: italic;
+  src: url(../fonts/GTAmerica/gta-regular-italic.woff2);
+}
+
+@font-face {
+  font-family: 'Pier Sans';
+  font-weight: normal;
+  src: url(../fonts/PierSans/PierSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Pier Sans';
+  font-weight: bold;
+  src: url(../fonts/PierSans/PierSans-Bold.ttf);
+}

@@ -1,0 +1,43 @@
+.-list {
+  overflow-y: auto;
+  margin: 0;
+  list-style: none;
+  padding: 10vh 3% 10vh 0;
+}
+
+.-list::-webkit-scrollbar {
+  display: none;
+}
+
+[class$='__list'] .m-list__item {
+  cursor: pointer;
+}
+
+[class$='__list'] .m-list__item:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+[class$='__list'] .m-list__item {
+  position: relative;
+  padding-left: 3rem;
+}
+
+[class$='__list'] .m-list__item:before {
+  content: "";
+  height: 5px;
+  width: 0;
+  background-color: var(--c-accent);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: width .6s var(--ease-in-out-circ);
+}
+
+[class$='__list'] .m-list__item:hover:before {
+  width: 2.5rem;
+}
+
+[class$='__list'] .m-list__item.-active:before {
+  width: 100%;
+}

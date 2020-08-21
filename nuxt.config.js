@@ -1,4 +1,3 @@
-
 export default {
   /*
   ** Nuxt rendering mode
@@ -19,6 +18,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'theme-color', content: '#040405' },
+      { name: 'apple-mobile-web-app-status-bar-style', content: '#040405' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
@@ -29,12 +30,16 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/css/styles.css'
   ],
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: '~/plugins/localStorage.js', ssr: false },
+    { src: '~/plugins/fragment.js' , ssr: false },
+    { src: '~/plugins/api.js' }
   ],
   /*
   ** Auto import components
@@ -59,11 +64,20 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+  },
+  serverMiddleware: [
+    { path: '/', handler: '~/api/server.js' }
+  ],
+  publicRuntimeConfig: {
+    API_URL: process.env.API_URL,
+    SPOTIFY_URL: process.env.SPOTIFY_URL,
+    SPOTIFY_STORAGE_KEY: process.env.SPOTIFY_STORAGE_KEY
   }
 }

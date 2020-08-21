@@ -1,0 +1,19 @@
+@media screen and (min-width: 1024px) {
+  .o-index {
+    grid-template-columns: 6rem 25% auto;
+    grid-template-rows: var(--first-row) calc(calc(100vh - var(--first-row)) - var(--gap));
+    grid-template-areas:
+    "social list header"
+    "routes list content";
+    gap: 6%;
+  }
+  
+  .o-index >>> [class$='__info-wrapper'] {
+    position: relative;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .o-index .m-index__social-media {
+    display: flex;
+  }
+}
