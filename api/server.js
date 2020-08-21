@@ -88,7 +88,6 @@ app.get('/api/refreshToken', (req, res) => {
   const authOptions = {
     url: `${process.env.SPOTIFY_ACOUNT_URL}/api/token`,
     headers: {
-      // eslint-disable-next-line camelcase
       Authorization: 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64'))
     },
     form: {
