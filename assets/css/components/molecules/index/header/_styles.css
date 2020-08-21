@@ -1,0 +1,51 @@
+.o-index .m-index__header {
+  padding: 0 3% 0 3%;
+  align-items: center;
+}
+
+.o-index .m-index__header .a-header__logo {
+  font-size: clamp(1rem, 2.5vw, var(--f-size-large));
+  font-family: var(--f-title);
+  font-weight: bold;
+}
+
+.o-index .m-index__header .m-header__wrapper {
+  display: flex;
+  gap: 2rem;
+  font-size: var(--f-size-small);
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.o-index .m-index__header .m-header__wrapper:before {
+  content: "";
+  height: 20px;
+  width: 1px;
+  background-color: white;
+  display: block;
+  order: 2;
+  opacity: .35;
+}
+
+.o-index .m-index__header .a-header__logout,
+.o-index .m-index__header .a-header__searcher {
+  order: 1;
+  cursor: pointer;
+  opacity: .35;
+  transition: opacity .4s ease-in-out;
+}
+
+.o-index .m-index__header .a-header__searcher {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.o-index .m-index__header .a-header__logout {
+  order: 3;
+}
+
+.o-index .m-index__header .a-header__logout:hover,
+.o-index .m-index__header .a-header__searcher:hover {
+  opacity: 1;
+}

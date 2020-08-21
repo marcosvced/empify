@@ -1,14 +1,19 @@
 .o-index {
+  --first-row: 7vh;
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: 6rem 25% auto;
+  grid-template-columns: 3rem calc(calc(100vw - 3rem) - 3%);
   grid-template-rows: var(--first-row) calc(calc(100vh - var(--first-row)) - var(--gap));
   grid-template-areas:
-    "social list header"
-    "routes list content";
-  gap: 6%;
+    "header header"
+    "routes list";
+  gap: 3%;
+  overflow-x: hidden;
+  max-width: 100vw;
+  max-height: 100vh;
 }
+
 .o-index .m-index__routes {
   grid-area: var(--routes);
   align-self: end;
@@ -18,11 +23,15 @@
   grid-area: var(--header);
   display: flex;
   justify-content: space-between;
+  max-width: 100vw;
 }
 
-.o-index >>> [class*='__list']{
+.o-index >>> [class*='__list'] {
   grid-area: var(--list);
 }
-.o-index >>> [class$='__info-wrapper']{
+
+.o-index >>> [class$='__info-wrapper'] {
   grid-area: var(--content);
+  position: fixed;
+  transition: transform .6s ease-in-out;
 }

@@ -273,7 +273,8 @@ export default {
 </script>
 
 <style scoped>
-@import "../../assets/css/components/searcher/_variables.css";
-@import "../../assets/css/components/searcher/_styles.css";
-@import "../../assets/css/components/searcher/_responsive.css";
+@import "assets/css/components/searcher/_variables.css";
+@import "assets/css/components/searcher/_styles.css";
+@import "assets/css/components/searcher/_responsive.css";
+
 </style>

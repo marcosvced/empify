@@ -1,5 +1,26 @@
 <template>
   <div>
+    <svg
+      class="a-icon__close"
+      width="25"
+      height="25"
+      viewBox="0 0 25 25"
+      fill="none"
+      @click="$emit('close')"
+    >
+      <path
+        d="M19.8617 12.1502H5.86166"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12.8617 19.1502L5.86166 12.1502L12.8617 5.15024"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
     <div class="overlay" />
     <figure class="m-tracks__figure">
       <img :src="cover" alt="cover">
@@ -35,44 +56,6 @@ export default {
 </script>
 
 <style scoped>
-[class$='__info-wrapper'] {
-  display: grid;
-  grid-template-columns: 45% 15% auto;
-  position: relative;
-  overflow: hidden;
-}
-
-[class$='__info-wrapper'] figure {
-  position: relative;
-  z-index: -1;
-  grid-column-start: 1;
-  grid-column: 1 / span 2;
-  align-self: end;
-}
-[class$='__info-wrapper'] .overlay {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to right, transparent 65%, var(--c-dark));
-  position: absolute;
-}
-[class$='__info-wrapper'] figure img {
-  display: block;
-  width: 100%;
-}
-
-[class$='__info-wrapper'] p {
-  grid-column-start: 2;
-  grid-column: 2 / span 2;
-  position: absolute;
-  align-self: center;
-  font-size: var(--f-size-x-large);
-  font-weight: bold;
-  color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--c-light);
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
+@import "assets/css/components/molecules/index/info-wrapper/_styles.css";
+@import "assets/css/components/molecules/index/info-wrapper/_responsive.css";
 </style>

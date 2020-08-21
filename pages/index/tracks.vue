@@ -1,7 +1,12 @@
 <template>
   <fragment>
     <list :items="tracks" :selected="selected" class="m-tracks__list" @click="select($event.id)" />
-    <info-wrapper v-if="selected" :item="selected" class="m-tracks__info-wrapper" />
+    <info-wrapper
+      v-if="selected && isInfoOpened"
+      :item="selected"
+      class="m-tracks__info-wrapper"
+      @close="isInfoOpened = false"
+    />
   </fragment>
 </template>
 
@@ -15,6 +20,11 @@ export default {
     InfoWrapper,
     List
   },
+  data () {
+    return {
+      isInfoOpened: true
+    }
+  },
   computed: {
     tracks: {
       get () {
@@ -24,12 +34,20 @@ export default {
     selected: {
       get () {
         return this.$store.getters['spotify/tracks/GET_SELECTED']
+      },
+      set (id) {
+        this.$store.commit('spotify/tracks/SET_SELECTED', id)
       }
+    }
+  },
+  watch: {
+    selected () {
+      this.isInfoOpened = true
     }
   },
   methods: {
     select (id) {
-      this.$store.commit('spotify/tracks/SET_SELECTED', id)
+      this.selected = id
     }
   }
 }
