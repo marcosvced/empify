@@ -64,6 +64,7 @@
         />
       </svg>
       <input
+        ref="input-searcher"
         v-model.trim="search"
         class="a-searcher__input"
         placeholder="Type to discover your sound"
@@ -205,6 +206,9 @@ export default {
             (!this.tracks.items.length && !this.albums.items.length && !this.artists.items.length))
       }
     }
+  },
+  mounted () {
+    this.$refs['input-searcher'].focus()
   },
   methods: {
     async _search () {

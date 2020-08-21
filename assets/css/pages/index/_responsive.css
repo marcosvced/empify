@@ -1,9 +1,3 @@
-/*--xsm: 375px;
---sm: 480px;
---md: 640px;
---ip: 1023px;
---lg: 1366px;
---xl: 1920px;*/
 @media screen and (min-width: 1024px) {
   .o-index {
     grid-template-columns: 6rem 25% auto;
@@ -13,16 +7,13 @@
     "routes list content";
     gap: 6%;
   }
+  
   .o-index >>> [class$='__info-wrapper'] {
     position: relative;
   }
 }
-
-@media screen and (min-width: 1280px) {
-
+@media screen and (min-width: 1366px) {
+  .o-index .m-index__social-media {
+    display: flex;
+  }
 }
-
-@media screen and (min-width: 1440px) {
-
-}
-

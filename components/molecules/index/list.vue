@@ -1,3 +1,4 @@
+<!--TODO: load more info when scrolling is complete-->
 <template>
   <ul
     v-if="items"
