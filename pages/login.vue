@@ -1,13 +1,14 @@
 <template>
   <div class="">
     <div class="o-login -flex">
+      <!--      TODO: Use the Unsplash api to change photo and photo info dynamically -->
       <section
         class="m-login__picture -background"
-        style="--img:url(https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1280&q=80)"
+        style="--img:url(https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)"
       >
         <div class="a-picture__user">
           <img
-            src="https://images.unsplash.com/photo-1541576980233-97577392db9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=804&q=80"
+            src="https://images.unsplash.com/photo-1578176810046-c5e7d03f69cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
             alt=""
             class="a-user__profile"
           >
@@ -30,7 +31,7 @@
             Millions of songs and podcasts. <br> No credit card needed.
           </p>
           <p class="a-hero__abstract">
-            Sing up with your spotify account
+            Only sign up with your spotify account
           </p>
         </div>
         <button class="m-login__start" @click="login">
@@ -86,7 +87,7 @@ export default {
       this._redirect()
     },
     _redirect () {
-      this.$router.push({ name: 'index' })
+      this.$router.push({ name: 'index-tracks' })
     }
   }
 }

@@ -1,9 +1,3 @@
-/*--xsm: 375px;
---sm: 480px;
---md: 640px;
---ip: 1023px;
---lg: 1366px;
---xl: 1920px;*/
 @media screen and (min-width: 1024px) {
   .o-login {
     --btn-height: 20%;

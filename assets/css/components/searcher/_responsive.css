@@ -1,12 +1,3 @@
-/*--xsm: 375px;
---sm: 480px;
---md: 640px;
---ip: 1023px;
---lg: 1280px;
---xl: 1920px;*/
-@media screen and (min-width: 1024px) {
-}
-
 @media screen and (min-width: 1280px) {
   .o-searcher {
     padding: 6% 6% 1%;
@@ -53,7 +44,3 @@
     font-size: clamp(var(--f-size-small), 2vw, var(--f-size-regular));
   }
 }
-
-@media screen and (min-width: 1440px) {
-}
-

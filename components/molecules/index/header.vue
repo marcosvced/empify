@@ -36,5 +36,4 @@ export default {
 
 <style scoped>
 @import "assets/css/components/molecules/index/header/_styles.css";
-@import "assets/css/components/molecules/index/header/_responsive.css";
 </style>

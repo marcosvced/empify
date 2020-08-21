@@ -7,8 +7,6 @@
   </div>
 </template>
 
-<style>
-</style>
 <script>
 import TransitionFade from '@/components/shared/transition-fade'
 import Searcher from '@/components/shared/searcher'
