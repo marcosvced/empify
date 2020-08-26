@@ -24,12 +24,12 @@ export default {
       { property: 'og:url', content: 'http://empify.herokuapp.com' },
       { property: 'og:title', content: 'Empify' },
       { property: 'og:description', content: 'Discover your perfect sound using this music search engine created with Nuxt.js and Spotify services.' },
-      { property: 'og:image', content: 'https://empify.herokuapp.com/assets/img/card.png' },
+      { property: 'og:image', content: 'https://empify.herokuapp.com/card.png' },
       { property: 'twitter:card', content: 'summary_large_image' },
       { property: 'twitter:url', content: 'http://empify.herokuapp.com' },
       { property: 'twitter:title', content: 'Empify' },
       { property: 'twitter:description', content: 'Discover your perfect sound using this music search engine created with Nuxt.js and Spotify services.' },
-      { property: 'twitter:image', content: 'https://empify.herokuapp.com/assets/img/card.png' },
+      { property: 'twitter:image', content: 'https://empify.herokuapp.com/card.png' },
       { hid: 'description', name: 'description', content: 'Discover your perfect sound using this music search engine created with Nuxt.js and Spotify services.' }
     ],
     link: [
