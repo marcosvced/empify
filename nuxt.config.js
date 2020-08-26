@@ -14,13 +14,24 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Empify',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'theme-color', content: '#040405' },
       { name: 'apple-mobile-web-app-status-bar-style', content: '#040405' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { name: 'author', content: 'Devler (Marcos Vicente Espasandín)' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'http://empify.herokuapp.com' },
+      { name: 'title', property: 'og:title', content: 'Empify' },
+      { property: 'og:description', content: 'Discover your perfect sound using this music search engine created with Nuxt.js and Spotify services.' },
+      { property: 'og:image', content: 'https://empify.herokuapp.com/card.png' },
+      { property: 'twitter:card', content: 'summary_large_image' },
+      { property: 'twitter:url', content: 'http://empify.herokuapp.com' },
+      { property: 'twitter:title', content: 'Empify' },
+      { property: 'twitter:description', content: 'Discover your perfect sound using this music search engine created with Nuxt.js and Spotify services.' },
+      { property: 'twitter:image', content: 'https://empify.herokuapp.com/card.png' },
+      { hid: 'description', name: 'description', content: 'Discover your perfect sound using this music search engine created with Nuxt.js and Spotify services.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -38,7 +49,7 @@ export default {
   */
   plugins: [
     { src: '~/plugins/localStorage.js', ssr: false },
-    { src: '~/plugins/fragment.js' , ssr: false },
+    { src: '~/plugins/fragment.js', ssr: false },
     { src: '~/plugins/api.js' }
   ],
   /*
