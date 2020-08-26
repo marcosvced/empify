@@ -20,9 +20,10 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'theme-color', content: '#040405' },
       { name: 'apple-mobile-web-app-status-bar-style', content: '#040405' },
+      { name: 'author', content: 'Devler (Marcos Vicente Espasandín)' },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: 'http://empify.herokuapp.com' },
-      { property: 'og:title', content: 'Empify' },
+      { name: 'title', property: 'og:title', content: 'Empify' },
       { property: 'og:description', content: 'Discover your perfect sound using this music search engine created with Nuxt.js and Spotify services.' },
       { property: 'og:image', content: 'https://empify.herokuapp.com/card.png' },
       { property: 'twitter:card', content: 'summary_large_image' },
@@ -48,7 +49,7 @@ export default {
   */
   plugins: [
     { src: '~/plugins/localStorage.js', ssr: false },
-    { src: '~/plugins/fragment.js' , ssr: false },
+    { src: '~/plugins/fragment.js', ssr: false },
     { src: '~/plugins/api.js' }
   ],
   /*
